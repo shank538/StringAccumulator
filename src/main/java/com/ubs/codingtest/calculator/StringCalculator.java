@@ -30,12 +30,11 @@ public class StringCalculator {
         int total = 0;
         if(!StringUtils.isEmpty(numbers)) {
 
-            logger.info("Processing numbers string : {}" + numbers);
+            logger.info("Processing numbers string : {}", numbers);
             Map<String,String> delimiterMap = parsingStrategy.getDelimiterAndNumbers(numbers);
             String delimiter = delimiterMap.get(Constants.DELIMITER);
             numbers = delimiterMap.get(Constants.NUMBERS);
 
-            logger.info("Delimiter for the input string : {}", delimiter);
             logger.info("Numbers for the input string : {}", numbers);
 
             List<Integer> negativeValues = new ArrayList();
