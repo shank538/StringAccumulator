@@ -16,6 +16,7 @@ public class DefaultParsingStrategy implements ParsingStrategy {
 
         String delimiter = DEFAULT_DELIMITER;
         if(numbers.startsWith("//")){
+            // extracting Delimiter pattern between // and \n and numbers after \n
             delimiter = StringUtils.substringBetween(numbers,"//", "\n");
             numbers = StringUtils.substringAfter(numbers, "\n");
         }

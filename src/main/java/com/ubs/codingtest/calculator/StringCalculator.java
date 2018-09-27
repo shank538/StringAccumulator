@@ -36,12 +36,14 @@ public class StringCalculator {
                 total = Arrays.stream(numbers.split(DelimiterUtils.getEscapedDelimiter(delimiter)))
                         .map((number) -> Integer.parseInt(number))
                         .filter((number) -> number < Constants.DEFAULT_ADD_THRESHOLD)
+                        // Getting all  the negattive numbers
                         .map((number) -> {
                             if (number < 0) {
                                 negativeValues.add(number);
                             }
                             return number;
                         })
+                        // Calculating the sum of all numbers
                         .collect(Collectors.summingInt(Integer::intValue));
 
             }catch(NumberFormatException  nfe){

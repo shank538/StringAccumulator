@@ -16,6 +16,7 @@ public class DelimiterUtils {
     public static String getEscapedDelimiter(String delimiter) {
 
         String escapedDelimiter = "";
+        // Escaping each special charater in delimiter string
         for (String operand : delimiter.split("")) {
             if(operators.contains(operand)){
                 escapedDelimiter += "\\"+operand;
